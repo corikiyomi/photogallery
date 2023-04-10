@@ -32,6 +32,7 @@ nav ul {
     align-content: space-around;
     padding: 20px 0;
     margin-bottom: 0;
+    list-style: none;
 }
 
 nav li {
@@ -77,8 +78,9 @@ h2 {
     padding-top: 0;
 }
 
-h2 + p {
+.gallery {
     margin: 0;
+    padding-left: 10px;
 }
 
 .header {
@@ -105,6 +107,7 @@ figcaption {
     bottom: 50px;
     font-size: 1.5em;
     color: #fff;
+    height: 10px;
 }
 
 .portrait figcaption {
@@ -113,25 +116,25 @@ figcaption {
     bottom: 600px;
 }
 
-figure:nth-child(8) figcaption {
+figure:nth-child(7) figcaption {
     position: relative;
     bottom: 60px;
 }
 
-figure:nth-child(4) figcaption, 
-figure:nth-child(10) figcaption, 
-figure:nth-child(11) figcaption,
-figure:nth-child(12) figcaption,
-figure:nth-child(13) figcaption,
-figure:nth-child(14) figcaption {
-    position: relative;
-    bottom: 260px;
-}
-
+figure:nth-child(3) figcaption, 
+figure:nth-child(9) figcaption, 
 figure:nth-child(10) figcaption,
 figure:nth-child(11) figcaption,
 figure:nth-child(12) figcaption,
 figure:nth-child(13) figcaption {
+    position: relative;
+    bottom: 260px;
+}
+
+figure:nth-child(9) figcaption,
+figure:nth-child(10) figcaption,
+figure:nth-child(11) figcaption,
+figure:nth-child(12) figcaption {
     color: black;
 }
 
@@ -221,21 +224,102 @@ footer {
 }
 
 /*************** MEDIA QUERIES ***************/
- /*
+
 @media screen and (max-width: 485px) {
+
     body {
-        width: 90vw;
+        max-width: 485px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        font-size: 1em;
+    }
+   
+}
+
+@media screen and (min-width: 486px) and (max-width: 879px) {
+    body {
+        width: 80vw;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    nav a {
+        font-size: 1.25em;
+    }
+
+    form {
+        width: 80%;
     }
 }
 
 @media screen and (min-width: 880px) {
     body {
-        width: 95vw;
+        width: 855px;
     }
 
     main {
+        margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        column-gap: 10px;
+        column-gap: 5px;
+    }
+
+    .gallery {
+        grid-column: 1 / 3;
+    }
+
+    figure:nth-child(even) {
+        padding-left: 5px;
+    }
+
+    figure:nth-child(odd) {
+        padding-right: 5px;
+    }
+
+    figure:last-child {
+        margin-bottom: 0px;
+    }
+
+    form {
+        width: 80%;
     }
 }
+
+@media screen and (min-width: 1300px) {
+    body {
+        width: 1280px;
+    }
+
+    nav ul {
+        justify-content: right;
+        padding-right: 20px;
+    }
+
+    main {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    } 
+
+    .gallery {
+        grid-column: 1 / 4;
+    }
+
+    figure:nth-child(even) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    figure:nth-child(odd) {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
