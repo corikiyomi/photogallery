@@ -1,54 +1,4 @@
-/* CSS RESET */
-/* http://meyerweb.com/eric/tools/css/reset/
-v2.0 | 20110126
-License: none (public domain)
-*/
-
-/* html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-} */
-/* HTML5 display-role reset for older browsers */
-/* article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-} */
-
-/* END CSS RESET CODE */
+/*************** GLOBALS *****************/
 
 html {
     font-family: Arial, Helvetica, sans-serif;
@@ -98,6 +48,11 @@ nav a {
     color: #fff;
 }
 
+a:hover {
+    color:#007d7b;
+    text-decoration: underline;
+}
+
 [href*="top"] {
     display: none;
 }
@@ -130,7 +85,7 @@ h2 + p {
     padding: 5px 10px;
 }
 
-/************ MAIN *************/
+/******************* MAIN *******************/
 
 figure {
     display: grid;
@@ -143,6 +98,7 @@ h2, main > p {
 }
 
 figcaption {
+    display: block;
     text-align: center;
     text-transform: uppercase;
     position: relative;
@@ -151,22 +107,135 @@ figcaption {
     color: #fff;
 }
 
+.portrait figcaption {
+    position: relative;
+    color: #000;
+    bottom: 600px;
+}
 
-/*********** FORM *************/
+figure:nth-child(8) figcaption {
+    position: relative;
+    bottom: 60px;
+}
+
+figure:nth-child(4) figcaption, 
+figure:nth-child(10) figcaption, 
+figure:nth-child(11) figcaption,
+figure:nth-child(12) figcaption,
+figure:nth-child(13) figcaption,
+figure:nth-child(14) figcaption {
+    position: relative;
+    bottom: 260px;
+}
+
+figure:nth-child(10) figcaption,
+figure:nth-child(11) figcaption,
+figure:nth-child(12) figcaption,
+figure:nth-child(13) figcaption {
+    color: black;
+}
+
+/******************** FORM **********************/
 
 .form {
+    background-color: #000;
+    color: #fff;
+    padding: 0 33px;
+}
+
+.form h2, .form p {
     width: auto;
     margin: 0 auto;
+    text-align: center;
+}
+
+.form p {
+    margin-bottom: 20px;
+}
+
+.form header {
+    display: none;
 }
 
 form {
     margin: auto;
+    padding: 0 15px;
 }
 
-/* MEDIA QUERIES */
-/*
+label {
+    text-transform: uppercase;
+    padding-left: 15px;
+    position: relative;
+    top: 7px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 5px 10px 10px;
+    border-radius: 2px;
+}
+
+input[placeholder] {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+::placeholder {
+    color: #007d7b;
+}
+
+.button {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+button {
+    width: 250px;
+    height: 35px;
+    border-radius: 13px;
+    background-color: #007d7b;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-style: none;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #0a4140;
+}
+
+/****************** FOOTER ********************/
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    text-transform: uppercase;
+}
+
+/*************** MEDIA QUERIES ***************/
+ /*
 @media screen and (max-width: 485px) {
     body {
         width: 90vw;
+    }
+}
+
+@media screen and (min-width: 880px) {
+    body {
+        width: 95vw;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
     }
 }
